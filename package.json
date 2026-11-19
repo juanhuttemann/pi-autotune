@@ -1,0 +1,42 @@
+{
+  "name": "pi-autotune",
+  "version": "0.1.0",
+  "description": "/learn for pi: after a task, learns from your session in the background and proposes a better pi harness (prompt additions, skills, scripts), using the Harness² method. Shows the evidence and asks before applying.",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "coding-agent",
+    "harness",
+    "self-improvement"
+  ],
+  "license": "MIT",
+  "files": [
+    "src",
+    "prompts",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.5.2",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "author": "Juan Hüttemann",
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

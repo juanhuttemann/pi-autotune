@@ -1,0 +1,11 @@
+#!/bin/sh
+# Reject AI co-author / attribution trailers in commit messages.
+# Enable once per clone: git config core.hooksPath .githooks
+msg_file="$1"
+bad=$(grep -inE '^[[:space:]]*co-authored-by:.*(claude|anthropic)|generated with \[?claude|noreply@anthropic\.com' "$msg_file" | grep -v '^[0-9]*:#')
+if [ -n "$bad" ]; then
+	echo "commit-msg: rejected. Remove these AI attribution lines:" >&2
+	echo "$bad" >&2
+	exit 1
+fi
+exit 0
